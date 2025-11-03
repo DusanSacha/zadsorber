@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zadsorber
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: test
+          url: http://sapcs2:9000/
+          client: '100'
+        app:
+          name: ZADSORBER
+          description: Adsorbermanagement prototype
+          package: Z_ADSORBER_PROTOTYPE
+          transport: CS2K900253
+        exclude:
+          - /test/

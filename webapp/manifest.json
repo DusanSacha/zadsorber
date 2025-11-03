@@ -121,6 +121,7 @@
           "options": {
             "settings": {
               "contextPath": "/Adsorber",
+              "initialLoad": "Enabled",
               "variantManagement": "Page",
               "navigation": {
                 "Adsorber": {
